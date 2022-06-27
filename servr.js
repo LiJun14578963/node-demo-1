@@ -24,19 +24,7 @@ var server = http.createServer(function(request, response){
   if(path === '/'){
     response.statusCode = 200
     response.setHeader('Content-Type', 'text/html;charset=utf-8')
-    response.write(`<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
-        <h1>
-        你好，这是我的代码
-        </h1>
-    </body>
-    </html>`)
+    response.write(`<h1>这是我的代码</h1>`)
     response.end()
   } else if(path === '/x'){
     response.statusCode = 200
@@ -46,7 +34,7 @@ var server = http.createServer(function(request, response){
   } else {
     response.statusCode = 404
     response.setHeader('Content-Type', 'text/html;charset=utf-8')
-    response.write(`你访问的页面不存在`)
+    response.write(`你输入的路径不存在对应的内容`)
     response.end()
   }
 
