@@ -24,17 +24,18 @@ var server = http.createServer(function(request, response){
   if(path === '/'){
     response.statusCode = 200
     response.setHeader('Content-Type', 'text/html;charset=utf-8')
-    response.write(`<h1>这是我的代码</h1>`)
+    response.write(`<link rel="stylesheet" href="./style.css">
+    <h1>你好,这是我的代码</h1> `)
     response.end()
-  } else if(path === '/x'){
-    response.statusCode = 200
-    response.setHeader('Content-Type', 'text/css;charset=utf-8')
-    response.write(`h1{color: red;}`)
-    response.end()
-  } else {
+  } else if(path === '/style.css'){
+  response.statusCode = 200
+  response.setHeader('Content-Type', 'text/css;charset=utf-8')
+  response.write(`h1{color: red;}`)
+  response.end()
+} else {
     response.statusCode = 404
     response.setHeader('Content-Type', 'text/html;charset=utf-8')
-    response.write(`你输入的路径不存在对应的内容`)
+    response.write(`你访问的页面不存在`)
     response.end()
   }
 
